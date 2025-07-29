@@ -12,30 +12,149 @@
 // #########################################################################################################################
 
 // array / js object that stores the story with animations and other stuff
-
-const templateStoryData = {
+const storyData = {
     start: {
-        text: "Welcome to Sunshine Trails, where your choices shape the perfect summer! Whether you're in for thrills, chill vibes, or something unexpected—this summer's in your hands.",
-        image: NaN,
+        text: "The sun is blazing and the air smells like cut grass. School's out—three whole months of freedom. Your phone buzzes. Two friends want to hang, but a solo chill day also sounds tempting.",
+        image: "images/start.png",
         options: [
-            { text: "Start Adventure", next: "A" },
+            { text: "Go to the lake with Maya", next: "S2A" },
+            { text: "Join Leo at the skatepark", next: "S2B" },
+            { text: "Stay home and plan a 'Me Day'", next: "S2C" }
         ],
-        animation: NaN
+        animation: { filePath: "animations/start.html", length: "3000" },
+        random: false
     },
-    S1: {
-        text: "Nova's echo reaches a wise old owl perched in a twisted silver tree. The owl hoots softly. “Follow the glow of the fireflies to the Dreaming River,” he says. “Then seek Mirror Mountain to return to the sky.”",
-        image: NaN,
+
+    S2A: {
+        text: "You arrive at the lake. Maya's already floating in a giant donut tube. 'You brought the chips, right?' she laughs. There's a platform out in the water and a trail leading into the woods.",
+        image: "images/lake.png",
         options: [
-            { text: "Follow the fireflies", next: "C" },
-            { text: "Ask more questions", next: "D" },
+            { text: "Float and snack", next: "S3A" },
+            { text: "Swim to the platform", next: "S3B" },
+            { text: "Explore the forest trail", next: "S3C" }
         ],
         animation: NaN,
-        random: true
+        random: false
     },
+
+    S2B: {
+        text: "The skatepark is buzzing. Leo tosses you a helmet. 'Let's hit the half-pipe—or maybe just grab smoothies and chill?'",
+        image: "images/skatepark.png",
+        options: [
+            { text: "Try a trick", next: "S3D" },
+            { text: "Get smoothies and chill", next: "S3E" },
+            { text: "Ask Leo to teach you", next: "S3F" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S2C: {
+        text: "You stay home, surrounded by music, books, and paint. The world outside can wait. What should your first solo move be?",
+        image: "images/bedroom.png",
+        options: [
+            { text: "Start a summer journal", next: "S3G" },
+            { text: "Look up road trips", next: "S3H" },
+            { text: "Paint something colorful", next: "S3I" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3A: {
+        text: "You float lazily under the sun, Maya drifting nearby. Laughter echoes across the lake. Time feels slower—and better.",
+        image: "images/floating.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3B: {
+        text: "You swim hard and cannonball off the platform, making the biggest splash yet. Summer has officially started!",
+        image: "images/platform.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3C: {
+        text: "The trail winds into silence and cool shade. You find a forgotten treehouse tucked into the canopy. A new secret summer spot.",
+        image: "images/treehouse.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3D: {
+        text: "You attempt a grind—it's wobbly but legit. Leo gives you a high five. You're learning fast.",
+        image: "images/trick.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3E: {
+        text: "You sip a mango smoothie while watching skaters fly through the air. Chill mode: fully activated.",
+        image: "images/smoothie.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3F: {
+        text: "Leo patiently shows you some basics. You laugh a lot and actually land one. A new summer skill unlocked!",
+        image: "images/learning.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3G: {
+        text: "You start a journal entry with doodles, music lyrics, and dreams. The first page of many.",
+        image: "images/journal.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3H: {
+        text: "Maps, snacks, playlists—you start planning a dream road trip, even if just on paper. Someday, soon.",
+        image: "images/map.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
+    S3I: {
+        text: "Paint splashes the canvas in warm tones. A sunset, a beach, a feeling. You lose time—and love it.",
+        image: "images/painting.png",
+        options: [
+            { text: "Back to Start", next: "homepage" }
+        ],
+        animation: NaN,
+        random: false
+    },
+
     homepage: {
-        animation: { filePath:"animations/gotohome.html", length:"1000" }
+        animation: { filePath: "animations/gotohome.html", length: "1000" }
     }
-}
+};
 
 // html elements
 const storyContainer = document.getElementById("app");
